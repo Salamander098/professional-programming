@@ -1,0 +1,39 @@
+import math
+# Assign values to x and n
+x = 4
+n = 3
+
+# Method 1
+power = x ** n
+print("%d to the power %d is %d" % (x,n,power))
+
+# Method 2
+power = pow(x,n)
+print("%d to the power %d is %d" % (x,n,power))
+
+# Method 3
+power = math.pow(2,6.5)
+print("%d to the power %d is %5.2f" % (x,n,power))
+# Assign a value
+number = 50
+
+# Check the is more than 50 or not
+if (number >= 50):
+    print("You have passed")
+else:
+    print("You have not passed")
+    import os
+import sys
+from PIL import Image
+
+if len(sys.argv) > 1:
+    if os.path.exists(sys.argv[1]):
+        im = Image.open(sys.argv[1])
+        target_name = sys.argv[1] + ".jpg"
+        rgb_im = im.convert('RGB')
+        rgb_im.save(target_name)
+        print("Saved as " + target_name)
+    else:
+        print(sys.argv[1] + " not found")
+else:
+    print("Usage: convert2jpg.py <file>")
